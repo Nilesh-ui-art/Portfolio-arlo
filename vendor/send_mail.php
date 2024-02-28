@@ -44,11 +44,11 @@ if (isset($_GET['mail'])) {
                            <h2>Message</h2>
                            <p>".nl2br($contact_message)."</p>";
 
-	  // Hosting SMTP Settings
-	  $smtp_host        = 'smtp.example.com';                    // Enter the smtp server address you got from your hosting here
-	  $smtp_port        = 465;                                 // TCP port to connect to
-	  $smtp_username    = 'yoursmtpusername@example.com';           // SMTP username
-	  $smtp_password    = 'yoursmtppassword';                        // SMTP password
+      // Hosting SMTP Settings
+      $smtp_host        = 'smtp.ionos.co.uk';                    // Enter the smtp server address you got from your hosting here
+      $smtp_port        = 587;                                 // TCP port to connect to
+      $smtp_username    = 'contact@nileshnerlekar.me';           // SMTP username
+      $smtp_password    = 'GvC/Mx@Uy5mVPSc';                        // SMTP password
 
       // Instantiation and passing `true` enables exceptions
       $mail = new PHPMailer(true);
@@ -60,12 +60,12 @@ if (isset($_GET['mail'])) {
          $mail->Host       = $smtp_host;                     
          $mail->Username   = $smtp_username;                   
          $mail->Password   = $smtp_password;               
-         $mail->SMTPSecure = "ssl";
+         $mail->SMTPSecure = "tls";
          $mail->Port       = $smtp_port;                                    
          $mail->CharSet    = "UTF-8";       
          $mail->SMTPAutoTLS = false;                        
          $mail->setFrom($smtp_username, $contact_subject);
-         $mail->addAddress("yourmailaddress@example.com");            // Enter the email address you want to send here
+         $mail->addAddress("contact@nileshnerlekar.me");            // Enter the email address you want to send here
          $mail->addReplyTo($contact_email, $contact_name);
 
          // Content
